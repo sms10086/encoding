@@ -2490,4 +2490,3 @@ func TestInvalidXMLName(t *testing.T) {
 		t.Errorf("error %q does not contain %q", err, want)
 	}
 }
-

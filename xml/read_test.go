@@ -1079,4 +1079,3 @@ func TestUnmarshalWhitespaceAttrs(t *testing.T) {
 		t.Fatalf("whitespace attrs: Unmarshal:\nhave: %#+v\nwant: %#+v", v, want)
 	}
 }
-
