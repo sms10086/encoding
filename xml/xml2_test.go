@@ -16,7 +16,7 @@ type Request struct {
 
 func TestMarshalWithPrefix(t* testing.T) {
 	
-	expected := `<s:request xmlns="http://example.org/"><s:form><Something>test</Something></s:form></s:request>`
+	expected := `<s:request xmlns:s="http://example.org/"><s:form><Something>test</Something></s:form></s:request>`
 	r := new(Request)
 	r.Form.Something = "test"
 	s, err := Marshal(r)
