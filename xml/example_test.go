@@ -149,3 +149,4 @@ func ExampleUnmarshal() {
 	// Groups: [Friends Squash]
 	// Address: {Hanga Roa Easter Island}
 }
+

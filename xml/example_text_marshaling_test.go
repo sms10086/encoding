@@ -77,3 +77,4 @@ func Example_textMarshalXML() {
 	// * Large:        2
 	// * Unrecognized: 3
 }
+

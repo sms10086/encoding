@@ -1002,6 +1002,7 @@ func TestTokenUnmarshaler(t *testing.T) {
 
 	d := NewTokenDecoder(tokReader{})
 	d.Decode(&Failure{})
+	panic("x")
 }
 
 func testRoundTrip(t *testing.T, input string) {

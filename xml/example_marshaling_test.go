@@ -82,3 +82,4 @@ func Example_customMarshalXML() {
 	// * Zebras:  2
 	// * Unknown: 3
 }
+
