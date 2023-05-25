@@ -685,9 +685,12 @@ Loop:
 				continue Loop
 			}
 		}
-		if len(finfo.parents) == len(parents) && finfo.name == start.Name.Local {
-			// It's a perfect match, unmarshal the field.
-			return true, d.unmarshal(finfo.value(sv, initNilPointers), start)
+		if len(finfo.parents) == len(parents) {
+			// nameless interface match any type
+			if finfo.name == start.Name.Local || finfo.namelessInterface {
+				// It's a perfect match, unmarshal the field.
+				return true, d.unmarshal(finfo.value(sv, initNilPointers), start)
+			}
 		}
 		if len(finfo.parents) > len(parents) && finfo.parents[len(parents)] == start.Name.Local {
 			// It's a prefix for the field. Break and recurse

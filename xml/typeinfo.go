@@ -22,6 +22,7 @@ type fieldInfo struct {
 	idx     []int
 	prefix string
 	name    string
+	namelessInterface bool // nameless interfce{} flag
 	xmlns   string
 	flags   fieldFlags
 	parents []string
@@ -198,6 +199,9 @@ func structFieldInfo(typ reflect.Type, f *reflect.StructField) (*fieldInfo, erro
 			finfo.xmlns, finfo.name = xmlname.xmlns, xmlname.name
 		} else {
 			finfo.name = f.Name
+			if f.Type.Kind() == reflect.Interface {
+				finfo.namelessInterface = true
+			}
 		}
 		return finfo, nil
 	}
