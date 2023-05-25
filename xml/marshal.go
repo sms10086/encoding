@@ -707,7 +707,13 @@ func (p *printer) writeStart(start *StartElement) error {
 	p.WriteString(start.Name.Local)
 
 	if start.Name.Space != "" {
-		p.WriteString(` xmlns="`)
+		if start.Name.Prefix != "" {
+			p.WriteString(` xmlns:`)
+			p.WriteString(start.Name.Prefix)
+			p.WriteString(`="`)
+		} else {
+			p.WriteString(` xmlns="`)
+		}
 		p.EscapeString(start.Name.Space)
 		p.WriteByte('"')
 	}
