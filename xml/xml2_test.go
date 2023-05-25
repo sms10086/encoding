@@ -24,7 +24,7 @@ func TestMarshalWithPrefix(t* testing.T) {
 		t.Fatal(err)
 	}
 	if string(s) != expected {
-		t.Fatalf("marshal fail")
+		t.Fatalf("marshal fail: %s", string(s))
 	}
 	err = Unmarshal([]byte(expected), r)
 	if err != nil {
